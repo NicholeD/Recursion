@@ -1,0 +1,104 @@
+{
+  "tests": [
+    {
+      "name": "Recursion - Count Down",
+      "setup": "",
+      "run": "./gradlew recursion-countdown-test --rerun-tasks",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Recursion - Magic-Index",
+      "setup": "",
+      "run": "./gradlew recursion-magic-index-test --rerun-tasks",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Recursion - LinkedList - Phase 0",
+      "setup": "",
+      "run": "./gradlew recursion-linkedlist-phase0 --rerun-tasks",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Recursion - LinkedList - Sum",
+      "setup": "",
+      "run": "./gradlew recursion-linkedlist-sum --rerun-tasks",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Recursion - LinkedList - Reverse",
+      "setup": "",
+      "run": "./gradlew recursion-linkedlist-reverse --rerun-tasks",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Recursion - LinkedList - Size",
+      "setup": "",
+      "run": "./gradlew recursion-linkedlist-size --rerun-tasks",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Recursion - LinkedList - Contains",
+      "setup": "",
+      "run": "./gradlew recursion-linkedlist-contains --rerun-tasks",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Recursion - LinkedList - Max",
+      "setup": "",
+      "run": "./gradlew recursion-linkedlist-max --rerun-tasks",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Recursion - LinkedList - Hashcode",
+      "setup": "",
+      "run": "./gradlew recursion-linkedlist-hashcode --rerun-tasks",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Recursion - LinkedList - Equals",
+      "setup": "",
+      "run": "./gradlew recursion-linkedlist-equals --rerun-tasks",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
