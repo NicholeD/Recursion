@@ -103,8 +103,14 @@ public class LinkedList {
      * @return The sum of all elements in the list
      */
     public Double sum() {
-        // TODO: calculate the sum of this LinkedList
-        throw new UnsupportedOperationException();
+        return sumRecursive(head);
+    }
+
+    public Double sumRecursive(Node node) {
+        if (node == null) {
+            return 0D;
+        }
+        return node.getData() + sumRecursive(node.getNext());
     }
 
     /**
@@ -113,8 +119,25 @@ public class LinkedList {
      * @return a new reverse order list
      */
     public LinkedList reverse() {
-        // TODO: create the reversed LinkedList
-        throw new UnsupportedOperationException();
+        LinkedList reversedList = new LinkedList();
+        return reverseRecursive(reversedList, head);
+    }
+
+    private LinkedList reverseRecursive(LinkedList list, Node node) {
+        if (node == null) {
+            return list;
+        }
+
+        if (node.getNext() == null) {
+            list.addFirst(node.getData());
+            return list;
+        }
+
+        if (node.getNext() != null) {
+            list.addFirst(node.getData());
+            return reverseRecursive(list, node.getNext());
+        }
+        return new LinkedList();
     }
 
     /**
@@ -123,10 +146,15 @@ public class LinkedList {
      * @return size of the linked list
      */
     public int size() {
-        // TODO: calculate the size of a LinkedList
-        throw new UnsupportedOperationException();
+        return sizeRecursive(head);
     }
 
+    private int sizeRecursive(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        return 1 + sizeRecursive(node.getNext());
+    }
 
     /**
      * Determines if the list contains a node with a double equal
@@ -135,8 +163,17 @@ public class LinkedList {
      * @return true, if the list contains the number.
      */
     public boolean contains(Double number) {
-        // TODO: determine if a LinkedList contains a node equal to the number specified
-        throw new UnsupportedOperationException();
+        return containsRecursive(head, number);
+    }
+
+    private boolean containsRecursive(Node node, Double i) {
+        if (node == null) {
+            return false;
+        } else if (i.equals(node.getData())) {
+            return true;
+        } else {
+            return containsRecursive(node.getNext(), i);
+        }
     }
 
     /**
@@ -144,21 +181,63 @@ public class LinkedList {
      * @return The max double in the list.
      */
     public Double max() {
-        // TODO: determines the max of elements in the LinkedList
-        throw new UnsupportedOperationException();
+        return maxRecursive(head);
+    }
+
+    private Double maxRecursive(Node node) {
+        if (node == null) {
+            return null;
+        }
+        if (node.getNext() == null) {
+            return node.getData();
+        }
+        return Math.max(node.getData(), maxRecursive(node.getNext()));
     }
 
     // EXTENSION
     @Override
     public int hashCode() {
-        // TODO: update/override this method to be a recursive implementation
-        throw new UnsupportedOperationException();
+        return hashCodeRecursive(head);
+    }
+
+    private int hashCodeRecursive(Node node) {
+        if (node == null) {
+            return Objects.hash();
+        }
+        int result = Objects.hash(node);
+
+        if (node.getNext() != null) {
+            return result+=hashCodeRecursive(node.getNext());
+        }
+        return result;
     }
 
     @Override
     public boolean equals(Object o) {
-        // TODO: update/override this method to be a recursive implementation
-        throw new UnsupportedOperationException();
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LinkedList)) {
+            return false;
+        }
+        LinkedList that = (LinkedList) o;
+        return equalsRecursive(head, that.head);
+    }
+
+    private boolean equalsRecursive(Node node1, Node node2) {
+        if (node1 == node2) {
+            return true;
+        }
+
+        if (node1 != null && node2 == null) {
+            return false;
+        } else if (node1 == null) {
+            return false;
+        } else if (!node1.getData().equals(node2.getData())) {
+            return false;
+        } else {
+            return equalsRecursive(node1.getNext(), node2.getNext());
+        }
     }
 
     @Override
